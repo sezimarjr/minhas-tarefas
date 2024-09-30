@@ -6,7 +6,7 @@ const tarefas = [
   {
     titulo: 'Estudar typescript',
     descricao: 'Ver a aula 3 da EBAC',
-    prioridade: 'Alta',
+    prioridade: 'importante',
     status: 'pendente'
   },
   {
