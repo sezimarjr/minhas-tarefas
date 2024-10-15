@@ -1,5 +1,6 @@
 import { FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { BotãoSalvar, Campo, MainContainer, Titulo } from '../../styles'
 import { Form, Opcao, Opcoes } from './styles'
 import * as enums from '../../utils/enums/Tarefa'
@@ -7,6 +8,7 @@ import Tarefa from '../../models/Tarefa'
 import { cadastrar } from '../../store/reducers/tarefas'
 
 const Formulario = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
@@ -23,6 +25,7 @@ const Formulario = () => {
     )
 
     dispatch(cadastrar(tarefaParaAdicionar))
+    navigate('/')
   }
   return (
     <MainContainer>
